@@ -59,18 +59,27 @@ Une fois les points de vue isolés, le pipeline extrait les éléments mobiles v
 * **Heuristiques Non Supervisées :** Détection basée sur la variance temporelle et la cohérence géométrique plutôt que sur des poids de classes pré-entraînés.
 
 ---
-
-## 🚀 Installation & Utilisation
+## 🚀 Installation & Configuration
 
 ### Prérequis
-* Python 3.9+
-* Google Colab ou Jupyter Notebook (GPU recommandé pour la phase Auto-encodeur)
+* Un compte Google (pour l'utilisation de Google Colab).
+* Le fichier `dataset.zip` contenant vos images et le fichier d'annotations.
 
-### Configuration
-Clonez le dépôt et installez les dépendances nécessaires :
+### Configuration du Google Drive
+Pour que le pipeline fonctionne correctement, vous devez préparer votre environnement Drive comme suit :
+
+1. **Téléversement :** Importez votre fichier `dataset.zip` à la racine de votre Google Drive ou dans un dossier spécifique (ex: `MyDrive/Projets/`).
+2. **Décompression :** Le notebook inclut une cellule d'extraction automatique. Assurez-vous que le chemin vers le fichier `.zip` dans le code correspond à votre emplacement sur le Drive.
+3. **Structure attendue :** Une fois décompressé, le dossier doit contenir :
+    * Les images au format `.jpg` ou `.png`.
+    * Le fichier `_annotations.csv` regroupant les coordonnées des boîtes englobantes.
+
+### Installation locale
+Si vous préférez exécuter le projet hors Colab, clonez le dépôt et installez les dépendances :
 
 ```bash
 git clone [https://github.com/votre-username/UnsupervisedVehicleDetection.git](https://github.com/votre-username/UnsupervisedVehicleDetection.git)
 cd UnsupervisedVehicleDetection
 
+pip install numpy pandas matplotlib opencv-python torch scikit-learn kneed tqdm
 pip install numpy pandas matplotlib opencv-python torch scikit-learn kneed tqdm
